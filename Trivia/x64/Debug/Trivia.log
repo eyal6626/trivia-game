@@ -1,0 +1,30 @@
+﻿  Database.cpp
+  Game.cpp
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Game.cpp(37,72): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Game.cpp(38,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Game.cpp(39,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Game.cpp(40,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Game.cpp(41,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Game.cpp(140,68): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Game.cpp(144,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Helper.cpp
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Helper.cpp(37,5): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Question.cpp
+  RecvMessage.cpp
+  Room.cpp
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Room.cpp(34,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Source.cpp
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Source.cpp(15,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  triviaServer.cpp
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\triviaServer.cpp(420,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\triviaServer.cpp(497,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\triviaServer.cpp(502,112): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\triviaServer.cpp(565,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\triviaServer.cpp(567,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\triviaServer.cpp(591,66): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  User.cpp
+  WSAInitializer.cpp
+  Generating Code...
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Helper.cpp(68): warning C4172: returning address of local variable or temporary: i
+  sqlite3.c
+  Trivia.vcxproj -> C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\x64\Debug\Trivia.exe

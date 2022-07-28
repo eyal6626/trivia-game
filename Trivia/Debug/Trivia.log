@@ -1,0 +1,13 @@
+﻿  Database.cpp
+  Helper.cpp
+  RecvMessage.cpp
+  Source.cpp
+  triviaServer.cpp
+  User.cpp
+  WSAInitializer.cpp
+  Generating Code...
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Trivia\Helper.cpp(68): warning C4172: returning address of local variable or temporary: i
+Database.obj : error LNK2019: unresolved external symbol _sqlite3_close referenced in function "public: __thiscall Database::Database(void)" (??0Database@@QAE@XZ)
+Database.obj : error LNK2019: unresolved external symbol _sqlite3_exec referenced in function "public: __thiscall Database::Database(void)" (??0Database@@QAE@XZ)
+Database.obj : error LNK2019: unresolved external symbol _sqlite3_open referenced in function "public: __thiscall Database::Database(void)" (??0Database@@QAE@XZ)
+C:\Users\משתמש\Documents\PROJECT\trivia_eyal\Trivia\Debug\Trivia.exe : fatal error LNK1120: 3 unresolved externals
