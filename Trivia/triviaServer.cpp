@@ -89,8 +89,9 @@ void triviaServer::clientHandler(SOCKET clientSocket)
 		// get the first message code
 		int msgCode = Helper::getMessageTypeCode(clientSocket);
 		//Check the msgCode of the request
-		while (msgCode != LOGOUT_REQUEST && (msgCode == LOG_IN_REQUEST || msgCode == CREATE_USER_REQUEST || msgCode == CREATE_ROOM || msgCode == JOIN_ROOM || msgCode == GET_LIST_OF_ROOMS || msgCode == GET_USERS_LIST || msgCode == LEAVE_ROOM || msgCode == CLOSE_ROOM || msgCode == START_GAME_REQUEST || msgCode == GAME_ANSWER || msgCode == LEAVE_GAME || msgCode == PERSONAL_STATUS || msgCode == BEST_SOCRE))
+		while (msgCode == LOGOUT_REQUEST || (msgCode == LOG_IN_REQUEST || msgCode == CREATE_USER_REQUEST || msgCode == CREATE_ROOM || msgCode == JOIN_ROOM || msgCode == GET_LIST_OF_ROOMS || msgCode == GET_USERS_LIST || msgCode == LEAVE_ROOM || msgCode == CLOSE_ROOM || msgCode == START_GAME_REQUEST || msgCode == GAME_ANSWER || msgCode == LEAVE_GAME || msgCode == PERSONAL_STATUS || msgCode == BEST_SOCRE))
 		{
+			std::cout << "Users: " << _connectedUsers.size();
 			std::cout << "\nUser massage code:" << msgCode << "\n";
 			currRcvMsg = build_receive_message(clientSocket, msgCode);
 			addReceivedMessage(currRcvMsg);
@@ -98,14 +99,12 @@ void triviaServer::clientHandler(SOCKET clientSocket)
 			msgCode = Helper::getMessageTypeCode(clientSocket);
 			
 		}
-		if (msgCode == LOGOUT_REQUEST || msgCode == EXIT) {
+		if (msgCode == EXIT) {
 			currRcvMsg = build_receive_message(clientSocket, msgCode);
 			if (getUserBySocket(clientSocket) != nullptr) {
 				hendleSigout(currRcvMsg);
 			}
-			if (msgCode == EXIT) {
-				closesocket(clientSocket);
-			}
+			closesocket(clientSocket);
 			delete currRcvMsg;
 			std::cout << "User is out!\n\n";
 		}
@@ -250,6 +249,10 @@ void triviaServer::handleReceivedMessages()
 					//If the request is valid and passed all of the checks add the user to the database
 					this->_db.addNewUser(userName, password, mail);
 				}
+			}
+
+			else if (msgCode == LOGOUT_REQUEST) {
+				hendleSigout(currMessage);
 			}
 
 			else if (msgCode == CREATE_ROOM) {
@@ -412,7 +415,7 @@ void triviaServer::hendleSigout(RecvMessages* currMessage)
 	delete it->second;
 	this->_connectedUsers.erase(it);
 	sendAnswerToTheUser(LOGOUT_SUCCESS, clientSocket);
-
+	std::cout << "User is out!\n\n";
 }
 
 void triviaServer::sendAnswerToTheUser(std::string msgcode,SOCKET sock)
