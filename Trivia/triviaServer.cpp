@@ -103,6 +103,9 @@ void triviaServer::clientHandler(SOCKET clientSocket)
 			if (getUserBySocket(clientSocket) != nullptr) {
 				hendleSigout(currRcvMsg);
 			}
+			if (msgCode == EXIT) {
+				closesocket(clientSocket);
+			}
 			delete currRcvMsg;
 			std::cout << "User is out!\n\n";
 		}
@@ -408,7 +411,6 @@ void triviaServer::hendleSigout(RecvMessages* currMessage)
 	}
 	delete it->second;
 	this->_connectedUsers.erase(it);
-	closesocket(clientSocket);
 	sendAnswerToTheUser(LOGOUT_SUCCESS, clientSocket);
 
 }
